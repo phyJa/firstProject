@@ -1,0 +1,44 @@
+<!-- Aqui colocaremos apenas as estruturas que se repetem
+nas páginas -->
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <!--Metadata-->
+    <meta charset="UTF-8" /> <!--Aceita caracteres especiais como ç, ~ etc -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Ajusta o site para caber em telas de diversos tamanhos-->
+    
+    {# Se é deixado algo dentro do bloco do arquivo que
+    vai legar o código (no caso, layout.html), o servidor/
+    nunjucks vai entender esse algo como padrão (ele será
+    colocado na página caso o bloco não seja encontrado)#}
+    {% block title %}
+        <title> Ecoleta </title>
+    {% endblock title %}
+    
+    
+    <!--Links para as fontes-->
+    <!--Veja que nesta tag link são chamadas duas fontes-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <!--Links para arquivos CSS-->
+    <!--Note que a estilização responsiva 
+    DEVE VIR POR ÚLTIMO-->
+    <link rel="stylesheet"  href="/styles/main.css" />
+    {% block styles %}
+    {% endblock styles %}
+    <link rel="stylesheet"  href="/styles/responsive.css" />
+</head>
+<body>
+    <!--Essa estrutura se repete, com diferentes ids-->
+    <div id="{{ pageId }}">
+        {% block content %}
+        {% endblock content %}    
+    </div>
+    <!--Modal-->
+    {% block modal %}
+    {% endblock modal %}
+    <!--Scripts-->
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>

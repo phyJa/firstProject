@@ -1,0 +1,92 @@
+Começando o BACK-END:
+REESTRUTURAÇÃO DE PASTAS
+
+Repare a reestruturação do projeto. Todos os arquivos acessíveis
+ao público estão na pasta public. Os outros relacionados ao servidor
+estão na src.
+
+ARQUIVO USADO PELO servidor node.js: server.js
+
+npm: node package manager, comando que gerencia os pacotes e dependências a serem instalados
+para o projeto. Exemplo: "npm init -y": transforma a pasta em um projeto. É o passo inicial,
+que identifica o projeto.
+
+DO ARQUIVO package.json:
+De todos os atributos...
+
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+Os que realmente importam são:
+
+"name": "nlw",
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
+Nota: Os outros atributos foram removidos do arquivo
+
+
+INSTALANDO O EXPRESS
+
+Depois de declarar a pasta como projeto, instalamos o módulo express para
+iniciarmos o servidor. Note que o express está localizado em node_modules/express. Todas
+as outras pastas são arquivos dos quais o express depende.
+
+INICIANDO O SERVIDOR: veja os comentários do arquivo server.js
+
+CRIANDO O ATALHO para a execução do server no terminal: Basta mudar a propriedade "test" para
+"start" e o seu valor padrão para o local do arquivo JS que inicia o servidor, isto é: 
+"node src/server.js". Depois de cumprido este passo, basta executar no terminal: "npm start".
+
+CONFIGURANDO O CAMINHO DO SERVIDOR: veja os comentários do comando get() em server.js. Note que
+para perceber mudanças no servidor, é necessário reiniciá-lo. Para evitar esse processo, insta-
+la-se o package/módulo "nodemon" (node monitoring) com o argumento -D (restrito ao momento
+do desenvolvimento). Ao instalar, mude a configuração em "package.json":
+
+"start": "node src/server.js"
+
+para
+
+"start": "nodemon src/server.js"
+
+CONFIGURAR A PASTA PÚBLICA (public) para que as pastas em seu interior estejam disponíveis para
+o server. Isso também é feito no arquivo server.js. Após essa configuração, devemos começar a 
+trabalhar com as rotas, mudando inclusive os atributos "href" dos links na linguagem html.
+
+NECESSIDADE DE UMA TEMPLATE ENGINE, o que tornará o código HTML mais dinâmico. Isto será muito
+importante ao se trabalhar com dados, como a página search-results, por exemplo. TEMPLATE
+escolhida: numjucks.
+
+BANCO DE DADOS
+Instalando o SQLite pelo comando npm: npm install sqlite3.
+Após isso, é feita a conexão do banco de dados com o server
+exportando o objeto em db.js (usando o module.exports) e
+o tomando em server.js usando require(diretório do 
+arquivo do objeto). 
+
+Usando o banco de dados, modificamos a função server.get("
+/search", ...) para consultar a tabela e mostrar os dados
+cadastrados enviando-os ao html através do server/nunjucks.
+
+Depois, fizemos os testes para ver a diferença entre os 
+resultados dos Métodos GET e POST. Verficamos que existe um
+problema ao enviar o formulário utilizando o método POST,
+um array vazio (o servidor não captura os dados). 
+Para corrigir o problema, é necessário usar
+a requisição req.body e habilitá-la no express.
+
+Com o problema resolvido, iniciamos a inserção dos dados
+cadastrados no banco de dados da aplicação.
+
+PARA DEPOIS DE TERMINAR O CURSO: Melhore a página do trata-
+mento de erros no cadastro.

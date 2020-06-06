@@ -1,0 +1,57 @@
+/*É importante ter a tag meta viewport
+no códgio html para o seguinte:*/
+@media (max-width: 1000px) {
+    #page-home {
+        background-position-x: 70vw;
+    }
+    #page-home .content {
+        text-align: center;
+        align-items: center;
+    }
+    #page-home header a {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #page-home main{
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    #page-search-results .cards {
+        grid-template-columns: 1fr;
+    }
+    #page-search-results .cards img {
+        height: 250px;
+    }
+    #page-create-point form .group-field {
+        display: flex;
+        flex-direction: column;
+    }
+    #page-create-point form .group-field .field + .field {
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 570px){
+    #page-home main h1{
+        font-size: 35px;
+    }
+    #page-home main p{
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 18px;
+    }
+}
+
+@media(min-width: 1370px){
+    #page-home{
+        background-position-x: 50vw;
+    }
+}
+
+@media(max-height: 680px){
+    #page-home{
+        background-position-y: 200px;
+    }
+}

@@ -1,0 +1,44 @@
+
+:root{
+    /*Declarando uma variável*/
+    --title-color: #322153;
+    --primary-color: #34cb79;
+    --input-background-color: #f0f0f5;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: #f0f0f5;
+    /* Um toque para deixar a fonte mais legível*/
+    -webkit-font-smoothing: antialiased; 
+}
+
+*{
+    /*Note que esse código remove espaços extras do navegador inclusive*/
+    margin: 0;
+    padding: 0;
+    /*A propriedade box-sizing limita
+    o tamanho da caixa do elemento.
+    Para o caso, o tamanho é limitado
+    até a borda (border-box). Veja que sem
+    ela a caixa tenderia a aumentar por causa
+    da propriedade padding.*/
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+    color: var(--title-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+/*
+h3{
+    display: inline;
+}
+Veja que também seria possível
+alinhar os elementos do header
+com este código comentado
+*/

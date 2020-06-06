@@ -1,0 +1,190 @@
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-create-point header{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg');
+    display: flex;
+    width: 20px;
+    height: 24px;
+}
+
+form{
+    margin-top: 80px;
+    background-color: white;
+    padding: 64px;
+    border-radius: 8px;
+    max-width: 730px;
+    margin: 80px auto 0;
+}
+
+form h1 {
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend {
+    margin-bottom: 40px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form legend h2 {
+    font-size: 24px;
+}
+
+form legend span {
+    color: var(--title-color);
+    font-size: 14px;
+}
+
+form .field {
+    /*Veja que o flex direction:column faz
+    os elementos filhos se disporem em blocos*/
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    /*A propriedade
+    flex com valor 1
+    preenche todo o espaço
+    disponível*/
+    flex: 1;
+}
+
+form .group-field {
+    display: flex;
+}
+
+form input,
+form select {
+    background-color: #f0f0f5;
+    border: 0;
+    padding: 16px 24px;
+    border-radius: 8px;
+    /*A próxima propriedade
+    retira o destaque do
+    campo selecionado*/ 
+    /*outline: none;*/
+}
+
+/*Tirando algumas configurações
+padrões dos browsers*/
+form select {
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*Mozilla Firefox*/
+    appearance: none; /*Edge*/
+}
+
+form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/*Veja que + retoma
+elementos irmãos e que
+a estilização é aplicada
+ao elemento à direita de
++ */
+form .group-field .field + .field {
+    margin-left: 24px;
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+    
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 8px;
+    margin-top: 40px;
+    
+    color: white;
+    font-weight: bold;
+    transition: background-color 700ms;
+}
+
+form button:hover {
+    background-color: #2fb86e;
+}
+
+.items-grid {
+    /* O display: grid; permite uma disposição
+    multidimensional dos elementos internos*/
+    display: grid;
+    /* fr: fraction */
+    grid-template-columns: 1fr 1fr 1fr;
+    /*Uma propriedade do grid:
+    ao invés de trabalharmos as
+    margens entre os elementos
+    de uma estrutura grid para criar
+    espaço entre eles, podemos
+    simplesmente escrever:*/
+    gap: 16px;
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.items-grid li span {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/*
+ATENÇÃO: Note que não há espaço entre li e selected.
+Isso quer dizer que estamos nos referindo ao li cuja
+classe se chama selected. Se colocássemos espaço entre
+eles, o navegador procuraria um elemento de classe
+selected dentro do li.
+*/
+.items-grid li.selected {
+    background-color: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+/*
+Corrigindo o problema encontrado no JS (filhos clicáveis)
+*/
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}

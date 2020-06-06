@@ -1,0 +1,66 @@
+<!-- Como o server procurará as pastas em src/views, colocamos simplesmente "layout.html" para que o presente documento herde o código html daquele arquivo -->
+{% extends "layout.html" %}
+
+{# Veja que é preciso se ter os blocos,
+senão o nunjucks descarta o restante #}
+{% block styles %}
+    <link rel="stylesheet" href="/styles/home.css"/>
+    <link rel="stylesheet" href="/styles/modal.css"/>
+{% endblock styles %}
+
+{#
+Criando uma variável para o id da div. Nesse caso,
+o servidor vai procurar pelo elemento div (veja
+no layout.html) cujo id é page-home. Ele então o acha
+seguindo a tag link ("/styles/home.css") neste arquivo
+#}
+{% set pageId = "page-home" %}
+
+{#
+Conteúdo a ser colocado dentro da div page-home
+em layout.
+#}
+{% block content %}
+    <div class="content">
+        <header>
+            <img src="/assets/logo.svg" alt="logomarca">
+
+            <!-- Veja que o elemento a não fica ao lado do h3. Isto ocorre porque o h3 ocupa toda a largura da página: seu display é o block -->
+
+            <a href="/create-point">
+                <span></span>
+                Cadastre um ponto de coleta
+            </a>
+        </header>
+        <!--Main é a caixa com o conteúdo principal-->
+        <main>
+
+            <h1>
+                Seu marketplace de coleta de resíduos
+            </h1>
+
+            <p>
+                Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente
+            </p>
+
+            <a href="#">
+                <span></span>
+                <strong>
+                    Pesquisar ponto de coleta
+                </strong>
+            </a>
+
+        </main>
+
+    </div>
+{% endblock content %}
+
+<!--Modal-->
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+<!-- Scripts -->
+{% block scripts %}
+    <script src="scripts/index.js"></script>
+{% endblock scripts %}
