@@ -5,3 +5,5 @@ First steps with GIT, making a project with Rocketseat
   register and list places where recycling is done.
   Feel free to contribute!
   It is mainly composed by JavaScript (and its framework Node.js), HTML/CSS (using also nunjucks) and a little bit of SQL.
+  
+  Note: all the comments of the project are in Portuguese.
