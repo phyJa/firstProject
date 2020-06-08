@@ -95,15 +95,15 @@ server.post(
         function afterInsertData(err) {
             if(err){
                 console.log(err);
-                return res.send("Erro no cadastro");
+                return res.render("create-point.html", {notSaved: true});
             } else {
-                console.log("Cadastro feito com sucesso");
+                //console.log("Cadastro feito com sucesso");
                 //Nota: aqui "this" referencia a resposta dada por run()
-                console.log(this);
+                //console.log(this);
+                // Envie à página create-point.html um objeto de propriedade saved
+                return res.render("create-point.html", {saved: true});
             }
             //return res.send("OK");
-            // Envie à página create-point.html um objeto de propriedade saved
-            return res.render("create-point.html", {saved: true});
         }
 
         //Coloque-a no terceiro argumento por referência (sem os parênteses). É passado para ela o erro como argumento

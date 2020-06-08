@@ -155,6 +155,9 @@
     {% if saved %}
         {% include "partials/point-created.html" %}}
     {% endif %}
+    {% if notSaved %}
+        {% include "partials/register-error.html" %}}
+    {% endif %}
 {% endblock modal %}
 
 <!-- Scripts -->

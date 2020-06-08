@@ -99,3 +99,13 @@
     color: white;
     margin-top: 20px;
 }
+
+.error img{
+    width: 50px;
+    height: auto;
+}
+
+.error h2 {
+    color: white;
+    margin-top: 10px;
+}
