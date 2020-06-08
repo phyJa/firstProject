@@ -159,6 +159,13 @@ form button:hover {
     align-items: center;
     text-align: center;
     cursor: pointer;
+    transition: background 400ms;
+}
+
+.items-grid li:hover {
+    background-color: var(--hovering-color);
+    border: 2px solid var(--hovering-color);
+    border-radius: 8px;
 }
 
 
