@@ -42,6 +42,12 @@ no códgio html para o seguinte:*/
         line-height: 22px;
         margin-top: 18px;
     }
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+    form .button {
+        padding: 10px;
+    }
 }
 
 @media(min-width: 1370px){
